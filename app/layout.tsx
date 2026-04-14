@@ -10,7 +10,8 @@ const teamSans = Barlow_Condensed({
 
 export const metadata: Metadata = {
   title: "Fort Worth-Arlington Pilots",
-  description: "Official home of the Fort Worth-Arlington Pilots with roster profiles, schedule updates, stats, and team news.",
+  description:
+    "Official home of the Fort Worth-Arlington Pilots with roster profiles, schedule updates, stats, and team news.",
   icons: {
     icon: "/logos/AWFPLogo.png",
     shortcut: "/logos/AWFPLogo.png",
