@@ -20,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${teamSans.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col text-[color:var(--foreground)]">{children}</body>
+      <body className="min-h-full flex flex-col text-[color:var(--foreground)]">
+        {children}
+      </body>
     </html>
   );
 }

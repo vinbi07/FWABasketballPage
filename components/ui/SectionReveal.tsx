@@ -9,7 +9,11 @@ type SectionRevealProps = {
   children: ReactNode;
 };
 
-export default function SectionReveal({ id, className, children }: SectionRevealProps) {
+export default function SectionReveal({
+  id,
+  className,
+  children,
+}: SectionRevealProps) {
   return (
     <motion.section
       id={id}

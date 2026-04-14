@@ -26,7 +26,13 @@ export default function MediaSection({ media }: MediaSectionProps) {
               className="group relative overflow-hidden rounded-2xl border border-[color:var(--outline-soft)]/55"
             >
               <div className="relative aspect-video">
-                <Image src={item.thumbnail} alt={`${item.title} placeholder`} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+                <Image
+                  src={item.thumbnail}
+                  alt={`${item.title} placeholder`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
                 <div className="absolute inset-0 bg-[color:var(--outline-deep)]/35 transition-colors duration-300 group-hover:bg-[color:var(--outline-deep)]/20" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="rounded-full border border-[color:var(--outline-soft)]/60 bg-[color:var(--title-color)]/75 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-[color:var(--outline-soft)]">
@@ -35,7 +41,9 @@ export default function MediaSection({ media }: MediaSectionProps) {
                 </div>
               </div>
               <div className="border-t border-[color:var(--outline-soft)]/35 bg-[color:var(--background)] p-4">
-                <p className="text-sm font-semibold uppercase tracking-[0.11em] text-[color:var(--title-color)]">{item.title}</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.11em] text-[color:var(--title-color)]">
+                  {item.title}
+                </p>
               </div>
             </motion.article>
           ))}

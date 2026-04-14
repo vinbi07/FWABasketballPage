@@ -15,9 +15,15 @@ export default function GameRow({ game }: GameRowProps) {
           : "border-[color:var(--outline-soft)]/55 bg-[color:var(--background)]"
       }`}
     >
-      <p className="text-sm font-semibold uppercase tracking-[0.1em] text-[color:var(--title-color)]">{game.date}</p>
-      <p className="text-sm uppercase tracking-[0.1em] text-[color:var(--subtitle-color)]">{game.time}</p>
-      <p className="text-sm uppercase tracking-[0.07em] text-[color:var(--foreground)]">{game.matchup}</p>
+      <p className="text-sm font-semibold uppercase tracking-[0.1em] text-[color:var(--title-color)]">
+        {game.date}
+      </p>
+      <p className="text-sm uppercase tracking-[0.1em] text-[color:var(--subtitle-color)]">
+        {game.time}
+      </p>
+      <p className="text-sm uppercase tracking-[0.07em] text-[color:var(--foreground)]">
+        {game.matchup}
+      </p>
       <div className="flex flex-wrap items-center gap-2">
         <span className="rounded-full border border-[color:var(--outline-soft)]/70 px-3 py-1 text-xs uppercase tracking-[0.12em] text-[color:var(--subtitle-color)]">
           {game.result}

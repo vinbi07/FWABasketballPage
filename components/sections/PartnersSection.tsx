@@ -7,7 +7,10 @@ type PartnersSectionProps = {
   socials?: SocialLink[];
 };
 
-export default function PartnersSection({ partners, socials = [] }: PartnersSectionProps) {
+export default function PartnersSection({
+  partners,
+  socials = [],
+}: PartnersSectionProps) {
   return (
     <SectionReveal id="shop" className="px-5 py-14 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-7xl">

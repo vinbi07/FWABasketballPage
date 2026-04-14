@@ -8,11 +8,18 @@ import { clubData } from "@/lib/clubData";
 export default function Home() {
   return (
     <div className="min-h-screen bg-transparent text-[color:var(--foreground)]">
-      <GlobalNav clubName={clubData.clubName} navItems={clubData.navItems} socials={clubData.socials} />
+      <GlobalNav
+        clubName={clubData.clubName}
+        navItems={clubData.navItems}
+        socials={clubData.socials}
+      />
       <main className="relative overflow-hidden pb-4">
         <HeroSection clubName={clubData.clubName} tagline={clubData.tagline} />
         <RosterGrid roster={clubData.roster} />
-        <PartnersSection partners={clubData.partners} socials={clubData.socials} />
+        <PartnersSection
+          partners={clubData.partners}
+          socials={clubData.socials}
+        />
       </main>
       <Footer socials={clubData.socials} />
     </div>

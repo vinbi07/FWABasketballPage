@@ -10,10 +10,14 @@ type PlayerDetailPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-export default async function PlayerDetailPage({ params }: PlayerDetailPageProps) {
+export default async function PlayerDetailPage({
+  params,
+}: PlayerDetailPageProps) {
   const { slug } = await params;
 
-  const player = clubData.roster.find((entry) => toPlayerSlug(entry.name) === slug);
+  const player = clubData.roster.find(
+    (entry) => toPlayerSlug(entry.name) === slug,
+  );
 
   if (!player) {
     notFound();
@@ -24,7 +28,11 @@ export default async function PlayerDetailPage({ params }: PlayerDetailPageProps
 
   return (
     <div className="min-h-screen bg-transparent text-[color:var(--foreground)]">
-      <GlobalNav clubName={clubData.clubName} navItems={clubData.navItems} socials={clubData.socials} />
+      <GlobalNav
+        clubName={clubData.clubName}
+        navItems={clubData.navItems}
+        socials={clubData.socials}
+      />
 
       <main className="pb-20 pt-14 sm:pt-16">
         <section className="px-5 pt-10 sm:px-8 lg:px-12">
@@ -55,7 +63,10 @@ export default async function PlayerDetailPage({ params }: PlayerDetailPageProps
                   </div>
 
                   <div className="text-sm uppercase tracking-[0.12em] text-[color:var(--subtitle-color)]">
-                    Member Since <span className="font-semibold text-[color:var(--title-color)]">{yearsSince} Years</span>
+                    Member Since{" "}
+                    <span className="font-semibold text-[color:var(--title-color)]">
+                      {yearsSince} Years
+                    </span>
                   </div>
                 </div>
               </div>

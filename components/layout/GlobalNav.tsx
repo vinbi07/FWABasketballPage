@@ -11,13 +11,21 @@ type GlobalNavProps = {
   socials: SocialLink[];
 };
 
-export default function GlobalNav({ clubName, navItems, socials }: GlobalNavProps) {
+export default function GlobalNav({
+  clubName,
+  navItems,
+  socials,
+}: GlobalNavProps) {
   const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-50 border-b border-[color:var(--outline-soft)]/55 bg-[color:var(--background)]/92 backdrop-blur-xl shadow-[0_10px_28px_rgba(38,38,38,0.22)]">
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-12">
-        <Link href="/" className="flex items-center" aria-label={`${clubName} home`}>
+        <Link
+          href="/"
+          className="flex items-center"
+          aria-label={`${clubName} home`}
+        >
           <Image
             src="/logos/AWFPLogo.png"
             alt={`${clubName} logo`}
