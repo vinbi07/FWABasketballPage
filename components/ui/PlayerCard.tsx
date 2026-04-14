@@ -27,16 +27,16 @@ export default function PlayerCard({ player, href = "#" }: PlayerCardProps) {
             alt={`${player.name} placeholder`}
             fill
             className="object-cover"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 20vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[rgba(38,38,38,0.9)] via-[rgba(38,38,38,0.48)] to-transparent" />
         </div>
-        <div className="absolute bottom-0 left-0 p-4">
-          <div className="inline-flex flex-col bg-gradient-to-r from-[#1b1d40]/40 to-[#bf3e21]/40 px-4 py-3 text-left">
-            <p className="text-lg font-semibold uppercase tracking-[0.1em] text-[color:var(--background)]">
+        <div className="absolute bottom-0 left-0 p-2 sm:p-4">
+          <div className="inline-flex flex-col bg-gradient-to-r from-[#1b1d40]/40 to-[#bf3e21]/40 px-2 py-2 text-left sm:px-4 sm:py-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[color:var(--background)] sm:text-lg">
               {player.name}
             </p>
-            <p className="text-sm uppercase tracking-[0.12em] text-[color:var(--outline-soft)]">
+            <p className="text-[10px] uppercase tracking-[0.12em] text-[color:var(--outline-soft)] sm:text-sm">
               #{player.number} {player.position}
             </p>
           </div>

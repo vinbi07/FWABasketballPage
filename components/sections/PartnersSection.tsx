@@ -13,7 +13,7 @@ export default function PartnersSection({
 }: PartnersSectionProps) {
   return (
     <SectionReveal id="shop" className="px-5 py-14 sm:px-8 lg:px-12">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto mt-0 max-w-7xl">
         <h2 className="section-title">Partners</h2>
         {socials.length > 0 ? (
           <div className="mt-5 flex flex-wrap gap-2">
