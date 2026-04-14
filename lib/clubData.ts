@@ -104,6 +104,7 @@ export const clubData: ClubData = {
     { title: "Practice Session", type: "image", thumbnail: "/placeholders/media.svg" },
     { title: "Locker Room Moments", type: "video", thumbnail: "/placeholders/media.svg" },
     { title: "Travel Day", type: "image", thumbnail: "/placeholders/media.svg" },
+    { title: "Meet the Team", type: "image", thumbnail: "/placeholders/media.svg" },
   ],
   partners: [
     { name: "Wenstin", logo: "/logos/Westin.jpg" },

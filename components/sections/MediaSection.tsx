@@ -14,7 +14,7 @@ export default function MediaSection({ media }: MediaSectionProps) {
     <SectionReveal className="px-5 py-14 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-7xl">
         <h2 className="section-title">Media</h2>
-        <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div className="mt-6 grid grid-cols-2 gap-5 md:grid-cols-3">
           {media.map((item) => (
             <motion.article
               key={item.title}

@@ -1,6 +1,7 @@
 import Footer from "@/components/layout/Footer";
 import GlobalNav from "@/components/layout/GlobalNav";
 import HeroSection from "@/components/sections/HeroSection";
+import MediaSection from "@/components/sections/MediaSection";
 import PartnersSection from "@/components/sections/PartnersSection";
 import RosterGrid from "@/components/sections/RosterGrid";
 import StaffSection from "@/components/sections/StaffSection";
@@ -18,6 +19,7 @@ export default function Home() {
         <HeroSection clubName={clubData.clubName} tagline={clubData.tagline} />
         <RosterGrid roster={clubData.roster} />
         <StaffSection staff={clubData.staff} />
+        <MediaSection media={clubData.media} />
         <PartnersSection
           partners={clubData.partners}
           socials={clubData.socials}

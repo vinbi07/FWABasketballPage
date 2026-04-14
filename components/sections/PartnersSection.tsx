@@ -37,7 +37,7 @@ export default function PartnersSection({
         ) : null}
         <div className="mt-6 rounded-2xl bg-gradient-to-r from-[#1b1d40] to-[#bf3e21] p-[2px] shadow-[0_10px_24px_rgba(38,38,38,0.18)]">
           <div className="rounded-2xl bg-white p-4 sm:p-5">
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+            <div className="grid grid-cols-3 gap-4 sm:grid-cols-3 lg:grid-cols-6">
               {partners.map((partner) => (
                 <div
                   key={partner.name}
