@@ -11,7 +11,7 @@ export default function ShopProductsSection({
 }: ShopProductsSectionProps) {
   return (
     <SectionReveal className="px-5 py-10 sm:px-8 lg:px-12">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto mt-[-80] max-w-7xl">
         <h2 className="section-title">Shop</h2>
         <p className="section-subtitle mt-2 text-sm uppercase tracking-[0.14em]">
           Shop Out latest gear and support the team!
@@ -19,7 +19,7 @@ export default function ShopProductsSection({
 
         <div className="mt-6 rounded-2xl bg-gradient-to-r from-[#1b1d40] to-[#bf3e21] p-[2px] shadow-[0_10px_24px_rgba(38,38,38,0.18)]">
           <div className="rounded-2xl bg-white p-4 sm:p-5">
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {products.map((product) => (
                 <article
                   key={product.name}
