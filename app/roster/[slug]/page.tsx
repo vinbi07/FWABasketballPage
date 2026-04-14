@@ -37,7 +37,7 @@ export default async function PlayerDetailPage({
       <main className="pb-20 pt-14 sm:pt-16">
         <section className="px-5 pt-10 sm:px-8 lg:px-12">
           <div className="mx-auto max-w-7xl">
-            <article className="overflow-hidden rounded-3xl border border-[color:var(--outline-soft)]/60 bg-white/85 shadow-[0_22px_54px_rgba(18,26,33,0.11)]">
+            <article className="overflow-hidden rounded-3xl border border-[color:var(--outline-soft)]/60 bg-[color:var(--background)]/85 shadow-[0_22px_54px_rgba(18,26,33,0.11)]">
               <div className="grid items-center gap-6 p-6 sm:p-8 md:grid-cols-[220px,1fr]">
                 <div className="flex justify-center md:justify-start">
                   <div className="relative h-44 w-44 overflow-hidden rounded-full border border-[color:var(--outline-soft)]/60 bg-[color:var(--background)]">

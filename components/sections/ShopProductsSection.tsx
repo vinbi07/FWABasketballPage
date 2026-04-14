@@ -17,15 +17,15 @@ export default function ShopProductsSection({
           Shop Out latest gear and support the team!
         </p>
 
-        <div className="mt-6 rounded-2xl bg-gradient-to-r from-[#1b1d40] to-[#bf3e21] p-[2px] shadow-[0_10px_24px_rgba(38,38,38,0.18)]">
-          <div className="rounded-2xl bg-white p-4 sm:p-5">
+        <div className="mt-6 rounded-2xl bg-gradient-to-r from-[color:var(--title-color)] to-[color:var(--subtitle-color)] p-[2px] shadow-[var(--panel-shadow)]">
+          <div className="rounded-2xl bg-[color:var(--surface)] p-4 sm:p-5">
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {products.map((product) => (
                 <article
                   key={product.name}
                   className="overflow-hidden rounded-xl border border-[color:var(--outline-soft)]/45 bg-[color:var(--background)]"
                 >
-                  <div className="relative h-44 w-full border-b border-[color:var(--outline-soft)]/35 bg-white">
+                  <div className="relative h-44 w-full border-b border-[color:var(--outline-soft)]/35 bg-[color:var(--surface-soft)]">
                     <Image
                       src={product.image}
                       alt={`${product.name} placeholder image`}

@@ -29,23 +29,23 @@ export default function HeroSection({ clubName, tagline }: HeroSectionProps) {
         </video>
       </div>
       <div
-        className="absolute inset-0 z-10 bg-[rgba(38,38,38,0.55)]"
+        className="absolute inset-0 z-10 bg-[color:var(--hero-overlay)]"
         aria-hidden="true"
       />
       <div
-        className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_50%_12%,rgba(217,165,154,0.26),rgba(38,38,38,0.2)_45%,rgba(38,38,38,0.7)_100%)]"
+        className="absolute inset-0 z-10 bg-[image:var(--hero-gradient)]"
         aria-hidden="true"
       />
       <div
-        className="absolute inset-x-0 bottom-0 z-15 h-24 bg-gradient-to-b from-transparent via-[rgba(247,248,250,0.2)] to-[color:var(--background)]"
+        className="absolute inset-x-0 -bottom-12 z-15 h-24 bg-gradient-to-b from-transparent via-[color:var(--hero-fade)] to-[color:var(--background)] sm:bottom-0 sm:h-24"
         aria-hidden="true"
       />
-      <div className="relative z-20 mx-auto max-w-7xl text-center">
+      <div className="relative mt-[-50] z-20 mx-auto max-w-7xl text-center">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, ease: "easeOut" }}
-          className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#f7f8fa] opacity-80 [text-shadow:0_4px_16px_rgba(27,29,64,0.85)]"
+          className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--hero-text)] opacity-80 [text-shadow:var(--hero-text-shadow)]"
         >
           Women&apos;s Flagball
         </motion.p>
@@ -61,14 +61,14 @@ export default function HeroSection({ clubName, tagline }: HeroSectionProps) {
             width={920}
             height={560}
             priority
-            className="h-auto w-full max-w-[500px] object-contain drop-shadow-[0_10px_30px_rgba(38,38,38,0.75)]"
+            className="h-auto w-full max-w-[500px] object-contain drop-shadow-[0_10px_30px_color-mix(in_srgb,var(--accent-shadow)_65%,transparent)]"
           />
         </motion.div>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.12, ease: "easeOut" }}
-          className="mx-auto font-bold mt-[-50] max-w-2xl text-base uppercase tracking-[0.12em] text-[#f7f8fa] opacity-80 [text-shadow:0_4px_16px_rgba(27,29,64,0.85)] sm:text-2xl"
+          className="mx-auto mt-[-50] max-w-2xl text-base font-bold uppercase tracking-[0.12em] text-[color:var(--hero-text)] opacity-80 [text-shadow:var(--hero-text-shadow)] sm:text-2xl"
         >
           {tagline}
         </motion.p>

@@ -14,7 +14,7 @@ export default function RosterPage() {
       />
       <main className="pb-10">
         <section className="px-5 pt-16 sm:px-8 lg:px-12">
-          <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-7xl rounded-2xl border border-[color:var(--panel-border)] bg-[color:var(--broadcast-surface)] px-4 py-5 shadow-[var(--panel-shadow)] sm:px-6 sm:py-6">
             <h1 className="section-title">Full Roster</h1>
             <p className="section-subtitle mt-3 text-sm uppercase tracking-[0.16em]">
               Team Players and Coaching Staff

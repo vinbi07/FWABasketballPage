@@ -63,14 +63,14 @@ export default function Footer({ socials }: FooterProps) {
                 <a
                   href={social.href}
                   aria-label={social.label}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--outline-soft)]/50 bg-white/65 p-2 transition-colors hover:bg-white"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--outline-soft)]/50 bg-[color:var(--button-surface)] p-2 transition-colors hover:bg-[color:var(--button-surface-hover)]"
                 >
                   <Image
                     src={social.icon}
                     alt={`${social.label} icon`}
                     width={28}
                     height={28}
-                    className="h-7 w-7 object-contain"
+                    className="social-icon h-7 w-7 object-contain"
                   />
                 </a>
               </li>

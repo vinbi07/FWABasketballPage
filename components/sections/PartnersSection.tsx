@@ -22,21 +22,21 @@ export default function PartnersSection({
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-[color:var(--outline-soft)]/70 bg-white/70 p-2 transition-colors hover:bg-white"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-[color:var(--outline-soft)]/70 bg-[color:var(--button-surface)] p-2 transition-colors hover:bg-[color:var(--button-surface-hover)]"
               >
                 <Image
                   src={social.icon}
                   alt={`${social.label} icon`}
                   width={30}
                   height={30}
-                  className="h-7 w-7 object-contain"
+                  className="social-icon h-7 w-7 object-contain"
                 />
               </a>
             ))}
           </div>
         ) : null}
-        <div className="mt-6 rounded-2xl bg-gradient-to-r from-[#1b1d40] to-[#bf3e21] p-[2px] shadow-[0_10px_24px_rgba(38,38,38,0.18)]">
-          <div className="rounded-2xl bg-white p-4 sm:p-5">
+        <div className="mt-6 rounded-2xl bg-gradient-to-r from-[color:var(--title-color)] to-[color:var(--subtitle-color)] p-[2px] shadow-[var(--panel-shadow)]">
+          <div className="rounded-2xl bg-[color:var(--surface)] p-4 sm:p-5">
             <div className="grid grid-cols-3 gap-4 sm:grid-cols-3 lg:grid-cols-6">
               {partners.map((partner) => (
                 <div

@@ -69,7 +69,7 @@ export default function PlayerTabs({ player, yearsSince }: PlayerTabsProps) {
 
   return (
     <section className="px-5 py-12 sm:px-8 lg:px-12">
-      <div className="mx-auto max-w-7xl rounded-2xl border border-[color:var(--outline-soft)]/55 bg-[color:var(--background)] p-4 sm:p-6">
+      <div className="mx-auto max-w-7xl rounded-2xl border border-[color:var(--panel-border)] bg-[linear-gradient(145deg,color-mix(in_srgb,var(--surface)_92%,var(--background)_8%)_0%,color-mix(in_srgb,var(--surface-strong)_38%,var(--surface)_62%)_52%,color-mix(in_srgb,var(--background)_86%,var(--surface-strong)_14%)_100%)] p-4 shadow-[var(--panel-shadow)] sm:p-6">
         <div className="mb-5 flex flex-wrap gap-2">
           {[
             { key: "stats", label: "Stats" },
@@ -83,7 +83,7 @@ export default function PlayerTabs({ player, yearsSince }: PlayerTabsProps) {
                 className={`rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] transition-colors ${
                   isActive
                     ? "border-[color:var(--title-color)] bg-[color:var(--title-color)] text-[color:var(--background)]"
-                    : "border-[color:var(--outline-soft)]/70 bg-white/70 text-[color:var(--subtitle-color)] hover:bg-white"
+                    : "border-[color:var(--outline-soft)]/55 bg-[linear-gradient(130deg,color-mix(in_srgb,var(--surface)_88%,transparent)_0%,color-mix(in_srgb,var(--surface-strong)_22%,transparent)_100%)] text-[color:var(--subtitle-color)] hover:bg-[color:var(--surface)]"
                 }`}
               >
                 {tab.label}
@@ -119,7 +119,10 @@ export default function PlayerTabs({ player, yearsSince }: PlayerTabsProps) {
                 </thead>
                 <tbody>
                   {boxScores.map((row, index) => (
-                    <tr key={`${row.date}-${index}`} className="bg-white/75">
+                    <tr
+                      key={`${row.date}-${index}`}
+                      className="bg-[linear-gradient(120deg,color-mix(in_srgb,var(--surface)_84%,transparent)_0%,color-mix(in_srgb,var(--surface-strong)_18%,transparent)_100%)]"
+                    >
                       <td className="rounded-l-xl px-3 py-3 text-sm">
                         {row.date}
                       </td>
@@ -144,7 +147,7 @@ export default function PlayerTabs({ player, yearsSince }: PlayerTabsProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.24, ease: "easeOut" }}
-              className="space-y-4 rounded-xl border border-[color:var(--outline-soft)]/55 bg-white/75 p-4 text-sm leading-relaxed text-[color:var(--foreground)]"
+              className="space-y-4 rounded-xl border border-[color:var(--outline-soft)]/42 bg-[linear-gradient(145deg,color-mix(in_srgb,var(--surface)_90%,transparent)_0%,color-mix(in_srgb,var(--surface-strong)_24%,transparent)_100%)] p-4 text-sm leading-relaxed text-[color:var(--foreground)]"
             >
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[color:var(--subtitle-color)]">

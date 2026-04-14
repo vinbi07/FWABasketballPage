@@ -29,14 +29,14 @@ export default function PlayerCard({ player, href = "#" }: PlayerCardProps) {
             className="object-cover"
             sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 20vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[rgba(38,38,38,0.9)] via-[rgba(38,38,38,0.48)] to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[color-mix(in_srgb,var(--accent-shadow)_84%,transparent)] via-[color-mix(in_srgb,var(--accent-shadow)_42%,transparent)] to-transparent" />
         </div>
         <div className="absolute bottom-0 left-0 p-2 sm:p-4">
-          <div className="inline-flex flex-col bg-gradient-to-r from-[#1b1d40]/40 to-[#bf3e21]/40 px-2 py-2 text-left sm:px-4 sm:py-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[color:var(--background)] sm:text-lg">
+          <div className="inline-flex flex-col bg-gradient-to-r from-[color-mix(in_srgb,var(--title-color)_44%,transparent)] to-[color-mix(in_srgb,var(--subtitle-color)_52%,transparent)] px-2 py-2 text-left sm:px-4 sm:py-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.1em] text-white sm:text-lg">
               {player.name}
             </p>
-            <p className="text-[10px] uppercase tracking-[0.12em] text-[color:var(--outline-soft)] sm:text-sm">
+            <p className="text-[10px] uppercase tracking-[0.12em] text-[color:var(--subtitle-color)] sm:text-sm">
               #{player.number} {player.position}
             </p>
           </div>

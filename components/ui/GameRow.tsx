@@ -108,7 +108,6 @@ function isPilotsTeam(teamName: string) {
 }
 
 export default function GameRow({ game }: GameRowProps) {
-  const isWin = game.status === "Final" && game.winner === "home";
   const { weekday, month, day, year } = formatDateParts(game.date);
   const { homeTeam, awayTeam } = parseTeams(game.matchup);
   const { homeScore, awayScore } = parseFinalScore(game.result);
@@ -125,16 +124,11 @@ export default function GameRow({ game }: GameRowProps) {
     pilotsSide !== undefined &&
     game.winner !== undefined &&
     game.winner !== pilotsSide;
+  const isWin = pilotsWon;
 
   return (
-    <article
-      className={`rounded-2xl border bg-[linear-gradient(120deg,color-mix(in_srgb,var(--background)_96%,white)_0%,color-mix(in_srgb,var(--background)_90%,var(--outline-soft)_10%)_100%)] p-4 ${
-        isWin
-          ? "border-emerald-500/75 shadow-[0_0_0_1px_rgba(16,185,129,0.25)]"
-          : "border-[color:var(--outline-soft)]/60"
-      }`}
-    >
-      <div className="mb-3 flex flex-wrap items-center gap-x-4 gap-y-2 rounded-xl  px-3 py-2.5">
+    <article className="border-l-4 border-[color:var(--subtitle-color)] py-3 pl-4">
+      <div className="mb-2 flex flex-wrap items-center gap-x-4 gap-y-2 rounded-xl  px-3 py-2.5">
         <p className="text-md font-semibold uppercase tracking-[0.18em] text-[color:var(--subtitle-color)]">
           {weekday}
         </p>
@@ -160,7 +154,7 @@ export default function GameRow({ game }: GameRowProps) {
               {game.status === "Final" ? "Final" : "Scheduled"}
             </span>
             {isWin ? (
-              <span className="rounded-md border border-[color:var(--subtitle-color)]/55 bg-[color:var(--subtitle-color)]/12 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-[color:var(--subtitle-color)]">
+              <span className="rounded-md border border-[color:var(--status-win)]/85 bg-[color:var(--status-win)]/18 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-[color:var(--status-win)] shadow-[var(--status-win-shadow)]">
                 Win
               </span>
             ) : null}
@@ -172,25 +166,25 @@ export default function GameRow({ game }: GameRowProps) {
 
         <div className="space-y-2">
           <div
-            className={`grid grid-cols-[44px_34px_minmax(0,1fr)] items-center gap-2 rounded-lg border bg-[color:var(--background)]/95 px-2 ${
+            className={`grid grid-cols-[44px_46px_minmax(0,1fr)] items-center gap-2 rounded-lg border px-2 ${
               isHomePilots && pilotsWon
-                ? "border-emerald-500/65 py-2.5 shadow-[0_0_0_1px_rgba(16,185,129,0.22)]"
+                ? "border-[color:var(--status-win)]/80 bg-[color:var(--status-win)]/14 py-2.5 shadow-[var(--status-win-shadow)]"
                 : isHomePilots && pilotsLost
-                  ? "border-[color:var(--subtitle-color)]/50 py-2.5"
-                  : "border-[color:var(--outline-soft)]/40 py-1.5"
+                  ? "border-[color:var(--subtitle-color)]/50 bg-[color:var(--background)]/95 py-2.5"
+                  : "border-[color:var(--outline-soft)]/40 bg-[color:var(--background)]/95 py-1.5"
             }`}
           >
             <span className="text-base font-bold text-[color:var(--title-color)]">
               {homeScore}
             </span>
             {isHomePilots ? (
-              <span className="inline-flex h-7 w-7 items-center justify-center overflow-hidden rounded-full border border-[color:var(--outline-soft)]/60 bg-white/90 p-0.5">
+              <span className="inline-flex h-10 w-10 items-center justify-center overflow-hidden">
                 <Image
                   src="/logos/AWFPLogo.png"
                   alt="Fort Worth Arlington Pilots logo"
-                  width={24}
-                  height={24}
-                  className="h-6 w-6 object-contain"
+                  width={36}
+                  height={36}
+                  className="h-9 w-9 object-contain"
                 />
               </span>
             ) : (
@@ -208,25 +202,25 @@ export default function GameRow({ game }: GameRowProps) {
           </div>
 
           <div
-            className={`grid grid-cols-[44px_34px_minmax(0,1fr)] items-center gap-2 rounded-lg border bg-[color:var(--background)]/86 px-2 ${
+            className={`grid grid-cols-[44px_46px_minmax(0,1fr)] items-center gap-2 rounded-lg border px-2 ${
               isAwayPilots && pilotsWon
-                ? "border-emerald-500/65 py-2.5 shadow-[0_0_0_1px_rgba(16,185,129,0.22)]"
+                ? "border-[color:var(--status-win)]/80 bg-[color:var(--status-win)]/14 py-2.5 shadow-[var(--status-win-shadow)]"
                 : isAwayPilots && pilotsLost
-                  ? "border-[color:var(--subtitle-color)]/50 py-2.5"
-                  : "border-[color:var(--outline-soft)]/35 py-1.5"
+                  ? "border-[color:var(--subtitle-color)]/50 bg-[color:var(--background)]/86 py-2.5"
+                  : "border-[color:var(--outline-soft)]/35 bg-[color:var(--background)]/86 py-1.5"
             }`}
           >
             <span className="text-base font-bold text-[color:var(--title-color)]">
               {awayScore}
             </span>
             {isAwayPilots ? (
-              <span className="inline-flex h-7 w-7 items-center justify-center overflow-hidden rounded-full border border-[color:var(--outline-soft)]/60 bg-white/90 p-0.5">
+              <span className="inline-flex h-10 w-10 items-center justify-center overflow-hidden">
                 <Image
                   src="/logos/AWFPLogo.png"
                   alt="Fort Worth Arlington Pilots logo"
-                  width={24}
-                  height={24}
-                  className="h-6 w-6 object-contain"
+                  width={36}
+                  height={36}
+                  className="h-9 w-9 object-contain"
                 />
               </span>
             ) : (
