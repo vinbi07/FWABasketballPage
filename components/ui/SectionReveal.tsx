@@ -31,7 +31,11 @@ export default function SectionReveal({
       initial={{ opacity: 0, y: 20 }}
       animate={isMobileViewport ? { opacity: 1, y: 0 } : undefined}
       whileInView={!isMobileViewport ? { opacity: 1, y: 0 } : undefined}
-      viewport={!isMobileViewport ? { once: true, amount: 0.05, margin: "0px 0px -10% 0px" } : undefined}
+      viewport={
+        !isMobileViewport
+          ? { once: true, amount: 0.05, margin: "0px 0px -10% 0px" }
+          : undefined
+      }
       transition={{ duration: 0.55, ease: "easeOut" }}
       className={className}
     >
