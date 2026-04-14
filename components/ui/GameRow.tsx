@@ -181,7 +181,7 @@ export default function GameRow({ game }: GameRowProps) {
               {awayScore}
             </span>
             {isPilotsTeam(awayTeam) ? (
-              <span className="inline-flex h-7 w-7 items-center justify-center overflow-hidden  bg-white/90 p-0.5">
+              <span className="inline-flex h-7 w-7 items-center justify-center overflow-hidden rounded-full border border-[color:var(--outline-soft)]/60 bg-white/90 p-0.5">
                 <Image
                   src="/logos/AWFPLogo.png"
                   alt="Fort Worth Arlington Pilots logo"
