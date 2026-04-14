@@ -10,10 +10,31 @@ const teamSans = Barlow_Condensed({
   subsets: ["latin"],
 });
 
+const previewBannerImage = "/FWABanner%20Web.png";
+
 export const metadata: Metadata = {
   title: "Fort Worth-Arlington Pilots",
   description:
     "Official home of the Fort Worth-Arlington Pilots with roster profiles, schedule updates, stats, and team news.",
+  openGraph: {
+    title: "Fort Worth-Arlington Pilots",
+    description:
+      "Official home of the Fort Worth-Arlington Pilots with roster profiles, schedule updates, stats, and team news.",
+    type: "website",
+    images: [
+      {
+        url: previewBannerImage,
+        alt: "Fort Worth Arlington Pilots banner",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fort Worth-Arlington Pilots",
+    description:
+      "Official home of the Fort Worth-Arlington Pilots with roster profiles, schedule updates, stats, and team news.",
+    images: [previewBannerImage],
+  },
   icons: {
     icon: "/logos/AWFPLogo.png",
     shortcut: "/logos/AWFPLogo.png",
