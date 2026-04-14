@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-label="Media Placeholder">
+  <rect width="960" height="560" fill="#111111"/>
+  <rect x="24" y="24" width="912" height="512" fill="#1f1f1f" stroke="#3f3f46" stroke-width="3"/>
+  <circle cx="480" cy="280" r="88" fill="#27272a"/>
+  <polygon points="456,236 456,324 536,280" fill="#d4d4d8"/>
+  <text x="480" y="502" fill="#d4d4d8" font-size="34" font-family="Arial, sans-serif" text-anchor="middle">MEDIA PLACEHOLDER</text>
+</svg>
