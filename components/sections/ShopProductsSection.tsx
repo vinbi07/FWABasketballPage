@@ -19,7 +19,7 @@ export default function ShopProductsSection({
 
         <div className="mt-6 rounded-2xl bg-gradient-to-r from-[color:var(--title-color)] to-[color:var(--subtitle-color)] p-[2px] shadow-[var(--panel-shadow)]">
           <div className="rounded-2xl bg-[color:var(--surface)] p-4 sm:p-5">
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
               {products.map((product) => (
                 <article
                   key={product.name}

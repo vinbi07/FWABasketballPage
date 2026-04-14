@@ -78,7 +78,11 @@ export default function HeroSection({ clubName, tagline }: HeroSectionProps) {
           transition={{ duration: 0.55, delay: 0.2, ease: "easeOut" }}
           className="mt-10"
         >
-          <Button href="/roster" label="View Roster" className="min-w-40" />
+          <Button
+            href="#follow-newsletter"
+            label="+ Follow"
+            className="min-w-40"
+          />
         </motion.div>
       </div>
     </section>

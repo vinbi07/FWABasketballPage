@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  DEFAULT_THEME_MODE,
   getInitialThemeMode,
   ResolvedTheme,
   THEME_STORAGE_KEY,
@@ -27,10 +28,6 @@ const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
 const themeCycleOrder: ThemeMode[] = ["light", "dark"];
 
-function readStoredThemeMode(): ThemeMode {
-  return getInitialThemeMode();
-}
-
 function applyResolvedTheme(resolvedTheme: ResolvedTheme) {
   const root = document.documentElement;
   root.setAttribute("data-theme", resolvedTheme);
@@ -38,18 +35,34 @@ function applyResolvedTheme(resolvedTheme: ResolvedTheme) {
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [mode, setMode] = useState<ThemeMode>(readStoredThemeMode);
+  const [mode, setMode] = useState<ThemeMode>(DEFAULT_THEME_MODE);
+  const [isHydrated, setIsHydrated] = useState(false);
   const resolvedTheme = useMemo<ResolvedTheme>(() => mode, [mode]);
 
   useEffect(() => {
+    const frameId = window.requestAnimationFrame(() => {
+      setMode(getInitialThemeMode());
+      setIsHydrated(true);
+    });
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+    };
+  }, []);
+
+  useEffect(() => {
     applyResolvedTheme(resolvedTheme);
+
+    if (!isHydrated) {
+      return;
+    }
 
     try {
       window.localStorage.setItem(THEME_STORAGE_KEY, mode);
     } catch {
       // Ignore storage errors in restricted browsing environments.
     }
-  }, [mode, resolvedTheme]);
+  }, [isHydrated, mode, resolvedTheme]);
 
   const cycleMode = useCallback(() => {
     setMode((currentMode) => {

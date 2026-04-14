@@ -1,4 +1,5 @@
 import Footer from "@/components/layout/Footer";
+import FollowNewsletterSection from "@/components/sections/FollowNewsletterSection";
 import GlobalNav from "@/components/layout/GlobalNav";
 import HeroSection from "@/components/sections/HeroSection";
 import MediaSection from "@/components/sections/MediaSection";
@@ -17,6 +18,7 @@ export default function Home() {
       />
       <main className="relative overflow-hidden pb-4">
         <HeroSection clubName={clubData.clubName} tagline={clubData.tagline} />
+        <FollowNewsletterSection />
         <RosterGrid roster={clubData.roster} />
         <StaffSection staff={clubData.staff} />
         <MediaSection media={clubData.media} />
