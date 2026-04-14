@@ -9,8 +9,13 @@ const teamSans = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: "Sports Club UI Template",
-  description: "UI-only reusable sports team website template",
+  title: "Fort Worth-Arlington Pilots",
+  description: "Official home of the Fort Worth-Arlington Pilots with roster profiles, schedule updates, stats, and team news.",
+  icons: {
+    icon: "/logos/AWFPLogo.png",
+    shortcut: "/logos/AWFPLogo.png",
+    apple: "/logos/AWFPLogo.png",
+  },
 };
 
 export default function RootLayout({
