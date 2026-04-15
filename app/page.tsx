@@ -18,7 +18,6 @@ export default function Home() {
       />
       <main className="relative overflow-hidden pb-4">
         <HeroSection clubName={clubData.clubName} tagline={clubData.tagline} />
-        <FollowNewsletterSection />
         <RosterGrid roster={clubData.roster} />
         <StaffSection staff={clubData.staff} />
         <MediaSection media={clubData.media} />
@@ -26,6 +25,7 @@ export default function Home() {
           partners={clubData.partners}
           socials={clubData.socials}
         />
+        <FollowNewsletterSection />
       </main>
       <Footer socials={clubData.socials} />
     </div>

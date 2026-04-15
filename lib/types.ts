@@ -114,6 +114,7 @@ export type MediaItem = {
 export type Partner = {
   name: string;
   logo: string;
+  href?: string;
 };
 
 export type Product = {

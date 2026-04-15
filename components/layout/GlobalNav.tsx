@@ -26,7 +26,9 @@ export default function GlobalNav({
     pathname === "/about" ||
     pathname.startsWith("/about/") ||
     pathname === "/leadership" ||
-    pathname.startsWith("/leadership/");
+    pathname.startsWith("/leadership/") ||
+    pathname === "/partners" ||
+    pathname.startsWith("/partners/");
   const [isClubMobileSubnavOpen, setIsClubMobileSubnavOpen] =
     useState(isRosterPath);
   const [isAboutMobileSubnavOpen, setIsAboutMobileSubnavOpen] =
@@ -90,7 +92,7 @@ export default function GlobalNav({
                 ) : null}
 
                 {isAboutItem ? (
-                  <div className="pointer-events-none absolute left-0 top-[calc(100%+0.35rem)] z-20 min-w-40 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
+                  <div className="pointer-events-none absolute left-0 top-[calc(100%+0.35rem)] z-20 min-w-40 space-y-1 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
                     <Link
                       href="/leadership"
                       className={`block rounded-lg border border-[color:var(--outline-soft)]/45 bg-[color:var(--surface)]/96 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] shadow-[var(--panel-shadow)] transition-colors ${
@@ -101,6 +103,17 @@ export default function GlobalNav({
                       }`}
                     >
                       Leadership
+                    </Link>
+                    <Link
+                      href="/partners"
+                      className={`block rounded-lg border border-[color:var(--outline-soft)]/45 bg-[color:var(--surface)]/96 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] shadow-[var(--panel-shadow)] transition-colors ${
+                        pathname === "/partners" ||
+                        pathname.startsWith("/partners/")
+                          ? "border-[color:var(--outline-soft)]/70 bg-[color:var(--outline-soft)]/14 text-[color:var(--subtitle-color)]"
+                          : "text-[color:var(--subtitle-color)] hover:bg-[color:var(--outline-soft)]/12"
+                      }`}
+                    >
+                      Partners
                     </Link>
                   </div>
                 ) : null}
@@ -294,7 +307,7 @@ export default function GlobalNav({
                     </div>
 
                     {isAboutMobileSubnavOpen ? (
-                      <div id="mobile-about-subnav">
+                      <div id="mobile-about-subnav" className="space-y-1">
                         <Link
                           href="/leadership"
                           onClick={() => setIsMobileMenuOpen(false)}
@@ -306,6 +319,18 @@ export default function GlobalNav({
                           }`}
                         >
                           Leadership
+                        </Link>
+                        <Link
+                          href="/partners"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className={`ml-4 block rounded-lg border border-[color:var(--outline-soft)]/35 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] transition-colors ${
+                            pathname === "/partners" ||
+                            pathname.startsWith("/partners/")
+                              ? "bg-[color:var(--highlight-bg)] text-[color:var(--highlight-text)]"
+                              : "text-[color:var(--subtitle-color)] hover:bg-[color:var(--outline-soft)]/12"
+                          }`}
+                        >
+                          Partners
                         </Link>
                       </div>
                     ) : null}

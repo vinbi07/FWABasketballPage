@@ -39,9 +39,11 @@ export default function PartnersSection({
           <div className="rounded-2xl bg-[color:var(--surface)] p-4 sm:p-5">
             <div className="grid grid-cols-3 gap-4 sm:grid-cols-3 lg:grid-cols-6">
               {partners.map((partner) => (
-                <div
+                <a
                   key={partner.name}
-                  className="flex h-36 items-center justify-center rounded-xl bg-white px-2"
+                  href={partner.href ?? "#"}
+                  aria-label={`${partner.name} website`}
+                  className="flex h-36 items-center justify-center rounded-xl bg-white px-2 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--theme-ring)]"
                 >
                   <div className="relative h-24 w-full">
                     <Image
@@ -52,7 +54,7 @@ export default function PartnersSection({
                       sizes="(max-width: 640px) 40vw, (max-width: 1024px) 22vw, 160px"
                     />
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>

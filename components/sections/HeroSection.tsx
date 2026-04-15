@@ -47,7 +47,7 @@ export default function HeroSection({ clubName, tagline }: HeroSectionProps) {
           transition={{ duration: 0.55, ease: "easeOut" }}
           className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--hero-text)] opacity-80 [text-shadow:var(--hero-text-shadow)]"
         >
-          Women's Flagball
+          Women&apos;s Flagball
         </motion.p>
         <motion.div
           initial={{ opacity: 0, scale: 0.82, x: 0, y: 0 }}

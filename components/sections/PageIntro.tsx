@@ -12,12 +12,9 @@ type PageIntroProps = {
   stats?: IntroStat[];
 };
 
-export default function PageIntro({
-  eyebrow,
-  title,
-  description,
-  stats = [],
-}: PageIntroProps) {
+export default function PageIntro(props: PageIntroProps) {
+  const { eyebrow, title, description } = props;
+
   return (
     <SectionReveal className="px-5 pt-14 sm:px-8 sm:pt-16 lg:px-12">
       <div className="relative mx-auto max-w-7xl overflow-hidden rounded-2xl border border-[color:var(--panel-border)] bg-[color:var(--broadcast-surface)] p-6 shadow-[var(--panel-shadow)] sm:p-8">
