@@ -109,7 +109,7 @@ export const clubData: ClubData = {
       image: "/photos/PadenLeader.jpeg",
       bio: "Designs individual progression plans that connect film study, position training, and performance benchmarks.",
       focus: "Executive Leadership",
-      socials: [{ label: "LinkedIn", href: "#" }],
+      socials: [{ label: "LinkedIn", href: "https://www.linkedin.com/in/paden-sickles/" }],
     },
     {
       name: "Insert Name",
