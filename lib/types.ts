@@ -94,9 +94,16 @@ export type ScheduleGame = {
   winner?: "home" | "away";
 };
 
+export type ScheduleEvent = {
+  date: string;
+  time: string;
+  title: string;
+};
+
 export type ScheduleMonth = {
   month: string;
   games: ScheduleGame[];
+  events?: ScheduleEvent[];
 };
 
 export type StatTableData = {
