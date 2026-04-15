@@ -51,6 +51,40 @@ export type StaffMember = {
   image: string;
 };
 
+export type AboutValue = {
+  title: string;
+  description: string;
+  icon: "strategy" | "community" | "development" | "culture";
+};
+
+export type AboutMilestone = {
+  year: string;
+  title: string;
+  description: string;
+};
+
+export type AboutContent = {
+  badge: string;
+  headline: string;
+  mission: string;
+  overview: string;
+  vision: string;
+  values: AboutValue[];
+  milestones?: AboutMilestone[];
+};
+
+export type LeadershipMember = {
+  name: string;
+  role: string;
+  image: string;
+  bio?: string;
+  focus?: string;
+  socials?: Array<{
+    label: string;
+    href: string;
+  }>;
+};
+
 export type ScheduleGame = {
   date: string;
   time: string;
@@ -92,6 +126,7 @@ export type ClubData = {
   clubName: string;
   tagline: string;
   description: string;
+  about: AboutContent;
   colors: {
     primary: string;
     accent: string;
@@ -100,6 +135,7 @@ export type ClubData = {
   socials: SocialLink[];
   roster: Player[];
   staff: StaffMember[];
+  leadership: LeadershipMember[];
   schedule: ScheduleMonth[];
   stats: StatTableData[];
   media: MediaItem[];

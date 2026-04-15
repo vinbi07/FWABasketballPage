@@ -5,12 +5,69 @@ export const clubData: ClubData = {
   tagline: "Relentless effort. One identity.",
   description:
     "This is a placeholder club overview. Replace this copy with your team mission, culture statement, and season focus.",
+  about: {
+    badge: "Who We Are",
+    headline: "Building A Program That Lasts Beyond The Scoreboard",
+    mission:
+      "We develop complete athletes and resilient leaders by combining elite competition, disciplined preparation, and community impact.",
+    overview:
+      "The Pilots are a women-led flag football organization focused on performance, opportunity, and representation. We invest in training environments where athletes can grow their game, build confidence, and lead on and off the field.",
+    vision:
+      "To become the standard for women's flag football organizations in Texas by creating a culture where preparation, accountability, and joy fuel sustainable excellence.",
+    values: [
+      {
+        title: "Purposeful Preparation",
+        description:
+          "Every session has intent: skill reps, film, and recovery plans are aligned to game-day execution.",
+        icon: "strategy",
+      },
+      {
+        title: "Team-First Accountability",
+        description:
+          "We commit to clear roles, honest communication, and shared standards that elevate the full roster.",
+        icon: "culture",
+      },
+      {
+        title: "Athlete Development",
+        description:
+          "From rookies to veterans, we provide coaching pathways that expand decision-making and leadership capacity.",
+        icon: "development",
+      },
+      {
+        title: "Community Impact",
+        description:
+          "We mentor youth athletes and partner locally to make women's sports more visible and more accessible.",
+        icon: "community",
+      },
+    ],
+    milestones: [
+      {
+        year: "Milestone Year",
+        title: "Milestone Title",
+        description:
+          "Description of the milestone and its impact on the club's growth, culture, or competitive success.",
+      },
+      {
+        year: "Milestone Year",
+        title: "Milestone Title",
+        description:
+          "Description of the milestone and its impact on the club's growth, culture, or competitive success.",
+      },
+      {
+        year: "Milestone Year",
+        title: "Milestone Title",
+        description:
+          "Description of the milestone and its impact on the club's growth, culture, or competitive success.",
+      },
+    ],
+  },
   colors: {
     primary: "#F7F8FA",
     accent: "#262626",
   },
   navItems: [
     { label: "Club", href: "/" },
+    { label: "About", href: "/about" },
     { label: "Schedule", href: "/schedule" },
     { label: "Stats", href: "/stats" },
     { label: "Shop", href: "/shop" },
@@ -36,6 +93,40 @@ export const clubData: ClubData = {
     { name: "Coach Two", role: "Associate Head Coach", image: "/placeholders/staff.svg" },
     { name: "Coach Three", role: "Defensive Coordinator", image: "/placeholders/staff.svg" },
     { name: "Coach Four", role: "Player Development", image: "/placeholders/staff.svg" },
+  ],
+  leadership: [
+    {
+      name: "Marjorie",
+      role: "Associate General Manager and WFL Commissioner",
+      image: "/placeholders/staff.svg",
+      bio: "Leads strategic planning, scheduling, and partner coordination across the full competitive calendar.",
+      focus: "League Operations",
+      socials: [{ label: "LinkedIn", href: "#" }],
+    },
+    {
+      name: "Paden Sickles",
+      role: "President and GM and Associate WFL Commissioner",
+      image: "/photos/PadenLeader.jpeg",
+      bio: "Designs individual progression plans that connect film study, position training, and performance benchmarks.",
+      focus: "Executive Leadership",
+      socials: [{ label: "LinkedIn", href: "#" }],
+    },
+    {
+      name: "Insert Name",
+      role: "Insert Role",
+      image: "/placeholders/staff.svg",
+      bio: "Description",
+      focus: "Insert Focus",
+      socials: [{ label: "LinkedIn", href: "#" }],
+    },
+    {
+      name: "Insert Name",
+      role: "Insert Role",
+      image: "/placeholders/staff.svg",
+      bio: "Description",
+      focus: "Insert Focus",
+      socials: [{ label: "LinkedIn", href: "#" }],
+    },
   ],
   schedule: [
     {

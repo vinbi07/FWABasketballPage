@@ -22,8 +22,15 @@ export default function GlobalNav({
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const isRosterPath =
     pathname === "/roster" || pathname.startsWith("/roster/");
+  const isAboutPath =
+    pathname === "/about" ||
+    pathname.startsWith("/about/") ||
+    pathname === "/leadership" ||
+    pathname.startsWith("/leadership/");
   const [isClubMobileSubnavOpen, setIsClubMobileSubnavOpen] =
     useState(isRosterPath);
+  const [isAboutMobileSubnavOpen, setIsAboutMobileSubnavOpen] =
+    useState(isAboutPath);
 
   return (
     <header className="sticky top-0 z-50 border-b border-[color:var(--outline-soft)]/55 bg-[color:var(--background)]/92 backdrop-blur-xl shadow-[var(--nav-shadow)]">
@@ -49,8 +56,11 @@ export default function GlobalNav({
         >
           {navItems.map((item) => {
             const isClubItem = item.label.toLowerCase() === "club";
+            const isAboutItem = item.label.toLowerCase() === "about";
             const isActive =
-              pathname === item.href || (isClubItem && isRosterPath);
+              pathname === item.href ||
+              (isClubItem && isRosterPath) ||
+              (isAboutItem && isAboutPath);
             return (
               <div key={item.label} className="group relative">
                 <Link
@@ -75,6 +85,22 @@ export default function GlobalNav({
                       }`}
                     >
                       Roster
+                    </Link>
+                  </div>
+                ) : null}
+
+                {isAboutItem ? (
+                  <div className="pointer-events-none absolute left-0 top-[calc(100%+0.35rem)] z-20 min-w-40 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
+                    <Link
+                      href="/leadership"
+                      className={`block rounded-lg border border-[color:var(--outline-soft)]/45 bg-[color:var(--surface)]/96 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] shadow-[var(--panel-shadow)] transition-colors ${
+                        pathname === "/leadership" ||
+                        pathname.startsWith("/leadership/")
+                          ? "border-[color:var(--outline-soft)]/70 bg-[color:var(--outline-soft)]/14 text-[color:var(--subtitle-color)]"
+                          : "text-[color:var(--subtitle-color)] hover:bg-[color:var(--outline-soft)]/12"
+                      }`}
+                    >
+                      Leadership
                     </Link>
                   </div>
                 ) : null}
@@ -144,8 +170,11 @@ export default function GlobalNav({
           <nav aria-label="Primary mobile" className="flex flex-col gap-2">
             {navItems.map((item) => {
               const isClubItem = item.label.toLowerCase() === "club";
+              const isAboutItem = item.label.toLowerCase() === "about";
               const isActive =
-                pathname === item.href || (isClubItem && isRosterPath);
+                pathname === item.href ||
+                (isClubItem && isRosterPath) ||
+                (isAboutItem && isAboutPath);
 
               if (isClubItem) {
                 return (
@@ -208,6 +237,75 @@ export default function GlobalNav({
                           }`}
                         >
                           Roster
+                        </Link>
+                      </div>
+                    ) : null}
+                  </div>
+                );
+              }
+
+              if (isAboutItem) {
+                return (
+                  <div key={`mobile-${item.label}`} className="space-y-1">
+                    <div
+                      className={`flex items-center rounded-xl pr-2 transition-colors ${
+                        isActive
+                          ? "bg-[color:var(--highlight-bg)] text-[color:var(--highlight-text)]"
+                          : "text-[color:var(--subtitle-color)] hover:bg-[color:var(--outline-soft)]/15"
+                      }`}
+                    >
+                      <Link
+                        href={item.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="block flex-1 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em]"
+                      >
+                        {item.label}
+                      </Link>
+                      <button
+                        type="button"
+                        aria-expanded={isAboutMobileSubnavOpen}
+                        aria-controls="mobile-about-subnav"
+                        aria-label={
+                          isAboutMobileSubnavOpen
+                            ? "Collapse About submenu"
+                            : "Expand About submenu"
+                        }
+                        onClick={() =>
+                          setIsAboutMobileSubnavOpen((open) => !open)
+                        }
+                        className="inline-flex h-8 w-8 items-center justify-center rounded-md "
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className={`h-4 w-4 transition-transform ${
+                            isAboutMobileSubnavOpen ? "rotate-180" : ""
+                          }`}
+                          aria-hidden="true"
+                        >
+                          <path d="m6 9 6 6 6-6" />
+                        </svg>
+                      </button>
+                    </div>
+
+                    {isAboutMobileSubnavOpen ? (
+                      <div id="mobile-about-subnav">
+                        <Link
+                          href="/leadership"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className={`ml-4 block rounded-lg border border-[color:var(--outline-soft)]/35 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] transition-colors ${
+                            pathname === "/leadership" ||
+                            pathname.startsWith("/leadership/")
+                              ? "bg-[color:var(--highlight-bg)] text-[color:var(--highlight-text)]"
+                              : "text-[color:var(--subtitle-color)] hover:bg-[color:var(--outline-soft)]/12"
+                          }`}
+                        >
+                          Leadership
                         </Link>
                       </div>
                     ) : null}

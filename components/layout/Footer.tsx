@@ -15,7 +15,10 @@ export default function Footer({ socials }: FooterProps) {
           </h3>
           <ul className="space-y-2 text-sm text-[color:var(--foreground)]/85">
             <li>
-              <a href="#" className="hover:text-[color:var(--subtitle-color)]">
+              <a
+                href="/about"
+                className="hover:text-[color:var(--subtitle-color)]"
+              >
                 About
               </a>
             </li>
