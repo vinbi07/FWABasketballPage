@@ -96,12 +96,12 @@ export const clubData: ClubData = {
   ],
   leadership: [
     {
-      name: "Marjorie",
+      name: "Marjorie Herrera Lewis",
       role: "Associate General Manager and WFL Commissioner",
-      image: "/placeholders/staff.svg",
+      image: "/photos/Marjorie-Lewis.jpg",
       bio: "Leads strategic planning, scheduling, and partner coordination across the full competitive calendar.",
       focus: "League Operations",
-      socials: [{ label: "LinkedIn", href: "#" }],
+      socials: [{ label: "LinkedIn", href: "https://www.linkedin.com/in/marjorie-herrera-lewis-doctor-of-arts-4020222/" }],
     },
     {
       name: "Paden Sickles",
