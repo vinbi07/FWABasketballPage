@@ -3,12 +3,24 @@
 import { LeadershipMember } from "@/lib/types";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
 
 type LeadershipCardProps = {
   leader: LeadershipMember;
 };
 
+const MOBILE_BIO_CHAR_LIMIT = 120;
+
 export default function LeadershipCard({ leader }: LeadershipCardProps) {
+  const [isMobileBioExpanded, setIsMobileBioExpanded] = useState(false);
+  const hasLongBio = Boolean(
+    leader.bio && leader.bio.length > MOBILE_BIO_CHAR_LIMIT,
+  );
+  const mobileBioText =
+    hasLongBio && !isMobileBioExpanded
+      ? `${leader.bio?.slice(0, MOBILE_BIO_CHAR_LIMIT).trimEnd()}...`
+      : leader.bio;
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 18 }}
@@ -39,9 +51,25 @@ export default function LeadershipCard({ leader }: LeadershipCardProps) {
         </div>
 
         {leader.bio ? (
-          <p className="text-xs uppercase tracking-[0.06em] text-[color:var(--foreground)]/80 sm:text-sm">
-            {leader.bio}
-          </p>
+          <div className="space-y-1">
+            <p className="text-xs uppercase tracking-[0.06em] text-[color:var(--foreground)]/80 sm:hidden">
+              {mobileBioText}
+            </p>
+            <p className="hidden text-xs uppercase tracking-[0.06em] text-[color:var(--foreground)]/80 sm:block sm:text-sm">
+              {leader.bio}
+            </p>
+
+            {hasLongBio ? (
+              <button
+                type="button"
+                onClick={() => setIsMobileBioExpanded((prev) => !prev)}
+                className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[color:var(--title-color)]/80 sm:hidden"
+                aria-expanded={isMobileBioExpanded}
+              >
+                {isMobileBioExpanded ? "Show less" : "Show more"}
+              </button>
+            ) : null}
+          </div>
         ) : null}
 
         <div className="flex items-center justify-between gap-3 pt-1">

@@ -99,7 +99,7 @@ export const clubData: ClubData = {
       name: "Marjorie Herrera Lewis",
       role: "Associate General Manager and WFL Commissioner",
       image: "/photos/Marjorie-Lewis.jpg",
-      bio: "Leads strategic planning, scheduling, and partner coordination across the full competitive calendar.",
+      bio: "Oversees league operations, competitive integrity, and growth of the WFL brand and mission. An award-winning journalist, author, professor, and former college football coach, she brings decades of leadership experience and was the first female journalist assigned to the Dallas Cowboys beat at the Fort Worth Star-Telegram before covering the NFL for The Dallas Morning News.",
       focus: "League Operations",
       socials: [{ label: "LinkedIn", href: "https://www.linkedin.com/in/marjorie-herrera-lewis-doctor-of-arts-4020222/" }],
     },
