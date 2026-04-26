@@ -1,6 +1,7 @@
 import Footer from "@/components/layout/Footer";
 import GlobalNav from "@/components/layout/GlobalNav";
 import PartnersSection from "@/components/sections/PartnersSection";
+import FollowNewsletterSection from "@/components/sections/FollowNewsletterSection";
 import { clubData } from "@/lib/clubData";
 
 export default function PartnersPage() {
@@ -17,6 +18,7 @@ export default function PartnersPage() {
           partners={clubData.partners}
           socials={clubData.socials}
         />
+        <FollowNewsletterSection />
       </main>
 
       <Footer socials={clubData.socials} />

@@ -8,9 +8,9 @@ export default function FollowNewsletterSection() {
       className="px-5 py-12 sm:px-8 lg:px-12"
     >
       <div className="panel-surface mx-auto max-w-7xl rounded-2xl p-6 sm:p-8">
-        <p className="section-subtitle text-xs font-semibold uppercase tracking-[0.2em]">
-          Follow Newsletter
-        </p>
+        <span className="inline-flex items-center rounded-full border border-[color:var(--outline-soft)] bg-[color:var(--button-surface)] px-3 py-1 text-[14px] font-semibold uppercase tracking-[0.18em] text-[color:var(--title-color)]">
+          Newsletter
+        </span>
         <h2 className="section-title mt-3">Stay In The Pilot Loop</h2>
         <p className="mt-3 max-w-3xl text-sm uppercase tracking-[0.08em] text-[color:var(--foreground)]/80 sm:text-base">
           Get team updates, game reminders, and behind-the-scenes drops straight

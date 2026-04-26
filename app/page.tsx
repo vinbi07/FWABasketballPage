@@ -21,11 +21,11 @@ export default function Home() {
         <RosterGrid roster={clubData.roster} />
         <StaffSection staff={clubData.staff} />
         <MediaSection media={clubData.media} />
+        <FollowNewsletterSection />
         <PartnersSection
           partners={clubData.partners}
           socials={clubData.socials}
         />
-        <FollowNewsletterSection />
       </main>
       <Footer socials={clubData.socials} />
     </div>
